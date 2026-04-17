@@ -64,8 +64,8 @@
 
 ### 1. Cloner le projet
 ```bash
-git clone https://github.com/your-username/groom-go.git
-cd eyajbali
+git clone https://github.com/amineno/Groom-go.git
+cd Groom-go
 ```
 
 ### 2. Configuration Backend
