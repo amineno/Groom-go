@@ -249,7 +249,7 @@ async function updateStats() {
         const isLocalFile = window.location.protocol === 'file:';
         if (!isLocalFile) {
             try {
-                const response = await fetch('http://localhost:3000/api/admin/dashboard', {
+                const response = await fetch('https://groom-go-production.up.railway.app/api/admin/dashboard', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -596,7 +596,7 @@ async function loadReservations() {
         if (!isLocalFile) {
             const token = localStorage.getItem('adminToken');
             try {
-                const response = await fetch('http://localhost:3000/api/admin/bookings', {
+                const response = await fetch('https://groom-go-production.up.railway.app/api/admin/bookings', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }

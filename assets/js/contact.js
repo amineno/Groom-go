@@ -38,7 +38,7 @@ async function handleContactSubmit(e) {
         if (!isLocalFile) {
             // Mode serveur - essayer l'API
             try {
-                const response = await fetch('http://localhost:3000/api/messages/contact', {
+                const response = await fetch('https://groom-go-production.up.railway.app/api/messages/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

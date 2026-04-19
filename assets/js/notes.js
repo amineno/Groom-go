@@ -134,7 +134,7 @@ async function saveReviewToServer(reviewData) {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/reviews', {
+        const response = await fetch('https://groom-go-production.up.railway.app/api/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -164,7 +164,7 @@ async function loadReviews() {
         
         if (!isLocalFile) {
             try {
-                const response = await fetch('http://localhost:3000/api/reviews');
+                const response = await fetch('https://groom-go-production.up.railway.app/api/reviews');
                 if (response.ok) {
                     const result = await response.json();
                     serverReviews = result.data || [];
