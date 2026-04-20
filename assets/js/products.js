@@ -2,15 +2,29 @@
 
 // Product data
 const products = {
-    1: { name: "Shampoing Naturel Premium", price: 25, image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop&crop=center" },
-    2: { name: "Shampoing Anti-Puces", price: 35, image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&crop=center" },
-    3: { name: "Collier Élégant en Cuir", price: 45, image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop&crop=center" },
-    4: { name: "Laisse Rétractable 5m", price: 55, image: "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?w=400&h=300&fit=crop&crop=center" },
-    5: { name: "Brosse Professionnelle", price: 28, image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center" },
-    6: { name: "Coupe-Griffes Professionnel", price: 32, image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=300&fit=crop&crop=center" },
-    7: { name: "Baume Hydratant Pattes", price: 22, image: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=400&h=300&fit=crop&crop=center" },
-    8: { name: "Spray Démêlant", price: 18, image: "https://images.unsplash.com/photo-1560743173-567a3b5658b1?w=400&h=300&fit=crop&crop=center" },
-    9: { name: "Gamelle Inox Double", price: 38, image: "https://images.unsplash.com/photo-1601758003122-53c40e686a19?w=400&h=300&fit=crop&crop=center" }
+    1: { name: "Peigne Démêloir Anti-Nœuds", price: 35, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.22.jpeg" },
+    2: { name: "Brosse de Bain Silicone", price: 28, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.22 (2).jpeg" },
+    3: { name: "Brosse de Toilettage Douche", price: 42, image: "assets/img/WhatsApp Image 2025-10-14 at 23.47.27 (2).jpeg" },
+    4: { name: "Brosse de Massage USB", price: 38, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.22 (1).jpeg" },
+    5: { name: "Huile de Brillance", price: 55, image: "assets/img/WhatsApp Image 2025-10-14 at 23.57.14.jpeg" },
+    6: { name: "Spray Soin Lavande", price: 32, image: "assets/img/WhatsApp Image 2025-10-14 at 23.57.14 (1).jpeg" },
+    7: { name: "Sérum Hydratant Naturel", price: 48, image: "assets/img/WhatsApp Image 2025-10-14 at 23.57.14 (2).jpeg" },
+    8: { name: "Kit Complet pour Chat", price: 65, image: "assets/img/WhatsApp Image 2025-10-15 at 00.08.53.jpeg" },
+    9: { name: "Balle Interactive Lumineuse", price: 42, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.23.jpeg" },
+    10: { name: "Maxi Pot Bâtonnets", price: 38, image: "assets/img/WhatsApp Image 2025-10-15 at 11.40.19 (3).jpeg" },
+    11: { name: "Croquettes Premium Chat", price: 52, image: "assets/img/WhatsApp Image 2025-10-15 at 11.40.19 (4).jpeg" },
+    12: { name: "Nourriture Humide Chien", price: 48, image: "assets/img/WhatsApp Image 2025-10-15 at 11.40.20 (1).jpeg" },
+    13: { name: "Shampoing Hydratant", price: 42, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.24 (1).jpeg" },
+    14: { name: "Lotion Démêlante", price: 36, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.24 (2).jpeg" },
+    15: { name: "Nourriture Crue BARF", price: 62, image: "assets/img/WhatsApp Image 2025-10-15 at 11.40.21.jpeg" },
+    18: { name: "Ensemble Laisse & Collier", price: 85, image: "assets/img/WhatsApp Image 2025-10-15 at 00.08.53 (2).jpeg" },
+    19: { name: "Distributeur Friandises", price: 38, image: "assets/img/WhatsApp Image 2025-10-15 at 00.08.53 (3).jpeg" },
+    20: { name: "Os à Mâcher Solide", price: 48, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.23 (3).jpeg" },
+    21: { name: "Gilet de Protection", price: 32, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.23 (2).jpeg" },
+    22: { name: "Ensemble Harnais & Laisse", price: 35, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.24.jpeg" },
+    23: { name: "Bandana Tie-Dye", price: 58, image: "assets/img/WhatsApp Image 2025-10-15 at 00.08.54 (3).jpeg" },
+    24: { name: "Assortiment Accessoires", price: 72, image: "assets/img/WhatsApp Image 2025-10-15 at 00.08.55.jpeg" },
+    25: { name: "Coussin Luxe Similicuir", price: 44, image: "assets/img/WhatsApp Image 2025-10-15 at 11.38.23 (1).jpeg" }
 };
 
 // Cart functionality
@@ -196,8 +210,31 @@ function updateVisibleProductsCounter(category) {
 
 // Add to cart function
 function addToCart(productId) {
-    const product = products[productId];
-    if (!product) return;
+    console.log('Attempting to add product ID:', productId);
+    let product = products[productId];
+    
+    // Fallback: If product details are not in the JS object, try to scrape them from the DOM
+    if (!product) {
+        console.warn(`Product ID ${productId} not found in JS registry. Attempting to scrape from DOM...`);
+        const productBtn = document.querySelector(`button[onclick="addToCart(${productId})"]`);
+        if (productBtn) {
+            const productCard = productBtn.closest('.product-card');
+            if (productCard) {
+                const name = productCard.querySelector('.product-title').textContent;
+                const priceText = productCard.querySelector('.current-price').textContent;
+                const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+                const image = productCard.querySelector('img').src;
+                
+                product = { name, price, image };
+                console.log('Successfully scraped product from DOM:', product);
+            }
+        }
+    }
+
+    if (!product) {
+        console.error(`Could not find details for product ID: ${productId}`);
+        return;
+    }
 
     // Check if product already in cart
     const existingItem = cart.find(item => item.id === productId);
@@ -217,6 +254,12 @@ function addToCart(productId) {
     updateCartDisplay();
     saveCartToStorage();
     showAddToCartAnimation();
+    
+    // Auto-open cart for immediate feedback
+    const cartSidebar = document.getElementById('cartSidebar');
+    if (cartSidebar && !cartSidebar.classList.contains('open')) {
+        toggleCart();
+    }
 }
 
 // Remove from cart
@@ -247,6 +290,11 @@ function updateCartDisplay() {
     const cartBody = document.getElementById('cartBody');
     const cartTotal = document.getElementById('cartTotal');
     
+    if (!cartCount || !cartBody) {
+        console.warn('Cart elements not found in DOM');
+        return;
+    }
+    
     // Update cart count
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
@@ -263,7 +311,7 @@ function updateCartDisplay() {
         cartBody.innerHTML = cart.map(item => `
             <div class="cart-item">
                 <div class="cart-item-image">
-                    <img src="${item.image}" alt="${item.name}">
+                    <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/60x60?text=Product'">
                 </div>
                 <div class="cart-item-info">
                     <div class="cart-item-title">${item.name}</div>
@@ -282,8 +330,10 @@ function updateCartDisplay() {
     }
 
     // Update total
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    cartTotal.textContent = `${total} DT`;
+    if (cartTotal) {
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        cartTotal.textContent = `${total} DT`;
+    }
 }
 
 // Toggle cart sidebar
@@ -374,15 +424,24 @@ function showOrderSuccessMessage() {
 
 // Save cart to localStorage
 function saveCartToStorage() {
-    localStorage.setItem('groomgo_cart', JSON.stringify(cart));
+    try {
+        localStorage.setItem('groomgo_cart', JSON.stringify(cart));
+    } catch (e) {
+        console.warn('Could not save cart to localStorage:', e);
+    }
 }
 
 // Load cart from localStorage
 function loadCartFromStorage() {
-    const savedCart = localStorage.getItem('groomgo_cart');
-    if (savedCart) {
-        cart = JSON.parse(savedCart);
-        updateCartDisplay();
+    try {
+        const savedCart = localStorage.getItem('groomgo_cart');
+        if (savedCart) {
+            cart = JSON.parse(savedCart);
+            updateCartDisplay();
+        }
+    } catch (e) {
+        console.warn('Could not load cart from localStorage:', e);
+        cart = [];
     }
 }
 
