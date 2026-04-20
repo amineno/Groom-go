@@ -198,3 +198,81 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .services-hero {
+        padding: 120px 0 80px;
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+    }
+    
+    .services-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .premium-card {
+        padding: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .card-title {
+        font-size: 1.75rem;
+    }
+    
+    .amount {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .services-hero p {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+    
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .services-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .services-hero .d-flex {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+    
+    .services-hero .btn {
+        width: 100%;
+    }
+    
+    .premium-card {
+        padding: 25px 20px;
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .amount {
+        font-size: 2.25rem;
+    }
+    
+    .info-bubble {
+        padding: 25px;
+        margin-bottom: 15px;
+    }
+}

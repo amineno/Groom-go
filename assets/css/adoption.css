@@ -306,20 +306,29 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+    .adoption-hero {
+        padding: 100px 0 50px;
+    }
+    
     .adoption-hero .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
-    .adoption-hero .hero-subtitle {
-        font-size: 1rem;
+    .adoption-card-image {
+        height: 200px;
     }
     
-    .adoption-card-footer {
-        flex-direction: column;
+    .favorite-btn {
+        width: 40px;
+        height: 40px;
     }
     
-    .filters-section .row {
-        gap: 0.5rem;
+    .modal-body {
+        padding: 1.25rem;
+    }
+    
+    .animal-detail-image {
+        height: 250px;
     }
 }

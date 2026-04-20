@@ -72,7 +72,23 @@ function setupEventListeners() {
 // Toggle Sidebar
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('collapsed');
+    const mainContent = document.querySelector('.main-content');
+    
+    if (window.innerWidth <= 991) {
+        // Mobile behavior: toggle active class to show/hide drawer
+        sidebar.classList.toggle('active');
+        
+        // Remove collapsed if it was there
+        sidebar.classList.remove('collapsed');
+        mainContent.classList.remove('sidebar-collapsed');
+    } else {
+        // Desktop behavior: toggle collapsed class to shrink sidebar
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('sidebar-collapsed');
+        
+        // Remove active if it was there
+        sidebar.classList.remove('active');
+    }
 }
 
 // Show Section
@@ -97,6 +113,11 @@ function showSection(sectionName) {
         
         // Load section-specific data
         loadSectionData(sectionName);
+
+        // Close sidebar on mobile after clicking
+        if (window.innerWidth <= 991) {
+            document.getElementById('sidebar').classList.remove('active');
+        }
     }
 }
 

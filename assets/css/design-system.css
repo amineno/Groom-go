@@ -401,21 +401,133 @@ p.text-muted {
     padding-left: 8px;
 }
 
-/* Responsive Fixes */
+/* Responsive Fixes & Enhancements */
+
+/* Tablets & Small Laptops (992px to 1199px) */
+@media (max-width: 1199px) {
+    .section-premium {
+        padding: 80px 0;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Tablets (768px to 991px) */
 @media (max-width: 991px) {
     .navbar {
         margin: 10px !important;
         border-radius: 12px !important;
     }
+    
+    .navbar-brand img {
+        height: 40px !important;
+    }
+    
+    .navbar-collapse {
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(20px);
+        margin-top: 15px;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid var(--glass-border);
+    }
+    
+    .nav-item {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .nav-link {
+        padding: 12px 20px !important;
+        border-radius: 10px !important;
+    }
+    
+    .nav-link.btn {
+        margin-left: 0 !important;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-premium {
+        padding: 60px 0;
+    }
+
     .hero-content {
         text-align: center;
         margin-bottom: 50px;
     }
+    
     .hero-content .d-flex {
         justify-content: center;
+        flex-wrap: wrap;
     }
+
+    .glass-card {
+        padding: 25px;
+    }
+
     .fab-booking {
         display: flex;
+    }
+}
+
+/* Small Tablets & Large Mobile (576px to 767px) */
+@media (max-width: 767px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-premium h2 {
+        font-size: 2rem;
+    }
+    
+    .icon-box-large {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+    }
+}
+
+/* Small Mobile (up to 575px) */
+@media (max-width: 575px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p.lead {
+        font-size: 1rem;
+    }
+    
+    .btn-premium {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .section-premium {
+        padding: 40px 0;
+    }
+    
+    .glass-card {
+        margin-bottom: 20px;
+    }
+    
+    .navbar-brand span {
+        font-size: 1.2rem !important;
+    }
+    
+    .footer-logo {
+        height: 40px !important;
+    }
+}
+
+/* Accessibility & Touch Targets */
+@media (pointer: coarse) {
+    .btn-premium, 
+    .nav-link, 
+    .social-link-premium {
+        min-height: 44px; /* Apple's recommended minimum touch target */
     }
 }
 
